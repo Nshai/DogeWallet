@@ -1,0 +1,284 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+@import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap');
+body {
+    background-color: black;
+}
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+.ghwt{
+    color:ghostwhite;
+}
+
+#maintitle:before {
+    color: #A67A2E;
+    content: "DogeWallet ";
+    font-family: 'Allerta Stencil', sans-serif;
+}
+
+#maintitle {
+    font-family: 'Allerta Stencil', sans-serif;
+}
+
+#maintitle:after {
+    color: #A67A2E;
+    content: " Fan";
+    font-family: 'Allerta Stencil', sans-serif;
+}
+#dogememe {
+    color: #6026BF;
+}
+#dogeheader {
+    color: #A67A2E;
+}
+#lrnmore {
+    padding: 10px;
+    border: 01px solid ghostwhite;
+    background-color: #281942;
+    border-radius: 10px;
+    color: ghostwhite;
+    font-size:18px;
+}
+.red{
+    color:red;
+}
+.footerspan{
+    color:orange; 
+}
+.hlafwidth {
+    max-width: 70%;
+}
+    #lrnmore:hover {
+        background-color: #1b112c;
+    }
+.bordert{
+    border-top:0.1px solid ghostwhite;
+}
+.footert {
+    color: #A67A2E;
+}
+.btnspan {
+    padding: 10px;
+    background-color: #281942;
+    font-size: 20px;
+    border-radius: 7px;
+    cursor: pointer;
+    user-select: none;
+}
+    .btnspan:hover {
+        background-color: #1b112c;
+    }
+
+#refresh {
+    user-select: none;
+    cursor: pointer;
+    color: royalblue;
+}
+
+.error {
+    border: 0.1px solid ghostwhite;
+    border-radius: 10px;
+    padding: 10px;
+    user-select: none;
+    color: ghostwhite;
+    cursor: pointer;
+    background-color: #a11818;
+}
+
+    .error:hover {
+        background-color: #7d1212;
+    }
+
+.msg {
+    min-height: 100px;
+    padding: 50px;
+    max-width: 500px;
+    border: 0.1px solid ghostwhite;
+    border-radius: 10px;
+}
+
+.green {
+    color: green;
+}
+
+.success {
+    border: 0.1px solid ghostwhite;
+    border-radius: 10px;
+    padding: 10px;
+    user-select: none;
+    color: ghostwhite;
+    cursor: pointer;
+    background-color: #1b112c;
+}
+
+    .success:hover {
+        background-color: #150d23;
+    }
+
+#cnt {
+    user-select: none;
+    cursor: pointer;  
+    background-color: #281942;
+    color: ghostwhite;
+    max-width: 300px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#transactionForm {
+    display: none;
+}
+
+
+
+
+
+
+
+
+/* Provide sufficient contrast against white background */
+a {
+    color: #0366d6;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+.navbar-nav > li > a {
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-right: 20px;
+    color: #fff
+}
+
+.navbar-toggler {
+    padding: .20rem .50rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    background-color: transparent;
+    border: 1px solid white
+}
+
+.nav-link {
+    color: #fff !important
+}
+
+.wrapper {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    background-color: #6026bf;
+    clip-path: polygon(71% 0, 100% 0, 100% 50%, 100% 100%, 65% 100%);
+    transition: 1s all
+}
+
+.brand {
+    color: ghostwhite;
+    font-family: 'Allerta Stencil', sans-serif;
+    margin-bottom: 4px;
+    font-size: 28px;
+    margin-left: 30px;
+    padding-right: 50px;
+}
+
+    .brand:hover {
+        cursor: pointer;
+        user-select: none;
+        text-decoration: none;
+        color: ghostwhite;
+    }
+
+.navbar-red:hover .wrapper {
+    clip-path: polygon(71% 0, 100% 0, 100% 50%, 100% 100%, 65% 100%)
+}
+
+.navbar-brand:hover {
+    color: #fff
+}
+
+.navbar-red {
+    background-color: #391672;
+    color: #fff
+}
+
+.all-show {
+    z-index: 10
+}
+
+.navborder {
+    border: 0.1px solid ghostwhite;
+    color: ghostwhite;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.navborder:hover {
+    color: ghostwhite;
+    text-decoration: none;
+    background-color: #191919;
+}
+a{
+    text-decoration:none;
+    
+}

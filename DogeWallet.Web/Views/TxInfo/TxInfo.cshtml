@@ -1,0 +1,60 @@
+﻿@model TransactionModel;
+@{
+    ViewData["Title"] = "Transaction Info";
+}
+
+@if (Model.TransactionResult.Length != 64 || Model.TransactionResult == null)
+{
+    <div class="container msg mt-5">
+        <div class="row">
+            <div class="col d-flex align-items-center justify-content-center">
+                <img class="mt-1" src="~/imgs/fail.png" style="height:110px;width:110px;" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mt-1 d-flex align-items-center justify-content-center">
+                <h3 class="red">ERROR</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mt-1 d-flex align-items-center justify-content-center">
+                <h4 class="ghwt">@Model.TransactionResult</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col d-flex align-items-center justify-content-center mt-3">
+                <a asp-controller="Wallet" asp-action="Wallet"> <div style="font-size:22px;" class="mt-3 error">Back To Wallet</div> </a>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+
+else
+{
+    <div class="container msg mt-5">
+        <div class="row">
+            <div class="col d-flex align-items-center justify-content-center">
+                <img class="mt-1" src="~/imgs/success.png" style="height:110px;width:110px;" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mt-1 d-flex align-items-center justify-content-center">
+                <h3 class="green">SUCCESS</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mt-3 d-flex align-items-center justify-content-center">
+                <a href="https://chain.so/tx/DOGETEST/@Model.TransactionResult" target="_blank">Watch Tx On Blockchain</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col d-flex align-items-center justify-content-center mt-3">
+                <a asp-controller="Wallet" asp-action="Wallet"> <div style="font-size:22px;" class="mt-3 success">Back To Wallet</div> </a>
+            </div>
+        </div>
+    </div>
+}
+

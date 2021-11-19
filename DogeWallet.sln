@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31605.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DogeWallet.Web", "DogeWallet.Web\DogeWallet.Web.csproj", "{E90E0D65-CEAA-43D7-A5B3-FA2203EA5D3C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DogeWallet.API", "DogeWallet.API\DogeWallet.API.csproj", "{36118C82-7351-40BD-9F8D-8B8BCEACE198}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DogeWallet.Wallet", "DogeWallet.Wallet\DogeWallet.Wallet.csproj", "{4197B8FD-0ED2-4D1E-B601-C682C8F967B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E90E0D65-CEAA-43D7-A5B3-FA2203EA5D3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E90E0D65-CEAA-43D7-A5B3-FA2203EA5D3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E90E0D65-CEAA-43D7-A5B3-FA2203EA5D3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E90E0D65-CEAA-43D7-A5B3-FA2203EA5D3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36118C82-7351-40BD-9F8D-8B8BCEACE198}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36118C82-7351-40BD-9F8D-8B8BCEACE198}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36118C82-7351-40BD-9F8D-8B8BCEACE198}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36118C82-7351-40BD-9F8D-8B8BCEACE198}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4197B8FD-0ED2-4D1E-B601-C682C8F967B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4197B8FD-0ED2-4D1E-B601-C682C8F967B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4197B8FD-0ED2-4D1E-B601-C682C8F967B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4197B8FD-0ED2-4D1E-B601-C682C8F967B8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {310294AF-8B99-437B-A1A4-C3BBFBA45666}
+	EndGlobalSection
+EndGlobal

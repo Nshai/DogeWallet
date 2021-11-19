@@ -1,0 +1,124 @@
+﻿@using Microsoft.AspNetCore.Http;
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+@model WalletModel;
+@{
+    ViewData["Title"] = "Wallet";
+}
+<div class="mt-5 pt-5">
+    <h3 class="ghwt mt-2">
+        Address: <span id="currAddr">@Model.Address</span>
+    </h3>
+    <h3 class="ghwt mt-1">Balance: <span id="balance">Loading...</span> <span id="refresh">&#8635;</span></h3>
+</div>
+
+
+<div class="container mt-5">
+    <div class="text-center" id="cnt"><h4 id="cntt">Create New Transaction</h4></div>
+</div>
+
+<div class="container mt-2" id="transactionForm">
+    <form asp-action="Wallet" asp-controller="Wallet" method="post">
+        <div class="form-group">
+            <label class="ghwt">Recipient Address:</label>
+            <br />
+            <span class="text-danger" asp-validation-for="TransactionModel.ToAddress"></span>
+            <input id="nowhitespaces" asp-for="TransactionModel.ToAddress" class="form-control mt-2" />
+
+            <label class="ghwt mt-2">Amount:</label>
+            <br />
+            <span class="text-danger" asp-validation-for="TransactionModel.Amount"></span>
+            <input asp-for="TransactionModel.Amount" class="form-control mt-2" />
+
+            <label class="ghwt mt-2">Fee:</label>
+            <br />
+            <span class="text-danger" asp-validation-for="TransactionModel.Fee"></span>
+            <span class="text-danger" asp-validation-for="TransactionModel.Fee">We Recommend to set min 1 doge for fee</span>
+            <input asp-for="TransactionModel.Fee" class="form-control mt-2" />
+
+            <input type="checkbox" asp-for="TransactionModel.IncludeDonation" checked /> <span class="ghwt">Include Developer Donation of @Configuration.GetSection("Donations")["DonationAmount"] Doge</span>
+        </div>
+        <button id="txsubm" type="submit" class="btn btn-primary mt-2"> Send </button>
+
+    </form>
+</div>
+
+
+@section Scripts{
+    <script>
+
+    window.addEventListener('load', (event) => {
+
+        $(document).ready(function () {
+
+            var url = 'https://chain.so/api/v2/get_address_balance/dogetest/@Model.Address';
+            var latestUpdate = 0;
+            var openTransactionForm = false;
+
+            $("#txsubm").on("click", function () {
+                $("#nowhitespaces").val($("#nowhitespaces").val().replace(/\s+/g, ''));
+            });
+
+            function updateBalance() {
+                $("#balance").text("Loading...");
+
+                $.ajax({
+
+                    url: url,
+                    type: 'GET',
+                    data: {
+
+                    },
+                    dataType: 'json',
+                    success: function (data) {
+                        $("#balance").text(data["data"]["confirmed_balance"] + " Ð");
+                    },
+                    error: function (request, error) {
+                        //alert("Request: " + JSON.stringify(request));
+                    }
+                });
+                latestUpdate = Date.now() + 10000;
+            }
+
+            updateBalance();
+
+            $("#refresh").on("click", function () {
+                if (latestUpdate <= Date.now()) {
+                    updateBalance();
+                }
+            });
+
+            setInterval(function () {
+                $.ajax({
+
+                    url: url,
+                    type: 'GET',
+                    data: {
+
+                    },
+                    dataType: 'json',
+                    success: function (data) {
+                        $("#balance").text(data["data"]["confirmed_balance"] +" Ð");
+                    },
+                    error: function (request, error) {
+                        //alert("Request: " + JSON.stringify(request));
+                    }
+                });
+            }, 10000);
+
+            $("#cnt").on("click", function () {
+                if (openTransactionForm == false) {
+                    $("#transactionForm").css("display", "block");
+                    $("#cntt").text("Close Transaction");
+                    openTransactionForm = true;
+                } else {
+                    $("#transactionForm").css("display", "none");
+                    $("#cntt").text("Create New Transaction");
+                    openTransactionForm = false;
+                }
+            });
+
+        });
+    });
+    </script>
+}

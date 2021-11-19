@@ -1,0 +1,37 @@
+﻿@model UserSecret;
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container text-center red mt-5">
+    <h5>
+        Create a strong password and pin, if you forget it or share it with someone,
+        you may lose all funds in your account! <br />
+        Cryptocurrencies allow you freedom as well as personal responsibility for finance.
+    </h5>
+</div>
+
+<div class="container text-center ghwt mt-5">
+    <h3>Log In</h3>
+</div>
+
+<div class="container d-flex align-items-center justify-content-center">
+    <div class="container hlafwidth ">
+        <form method="post" asp-action="Login" asp-controller="Access" class="pt-2">
+
+            <div class="form-group">
+                <label class="ghwt">Enter Password</label>
+                <br />
+                <span class="text-danger" asp-validation-for="Password"></span>
+                <input type="password" asp-for="Password" class="form-control mt-2" />
+
+                <label class="ghwt mt-2">Enter 6 digits PIN</label>
+                <br />
+                <span class="text-danger" asp-validation-for="Pin"></span>
+                <input type="password" asp-for="Pin" class="form-control mt-2" />
+            </div>
+
+            <button type="submit" class="btn btn-primary mt-2"> Log In </button>
+        </form>
+    </div>
+</div>
